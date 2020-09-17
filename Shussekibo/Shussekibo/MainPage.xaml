@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:Shussekibo"
+             x:Class="Shussekibo.MainPage"
+             Title="出欠席システム">
+
+    <!--iOSの場合に上部に余白を入れるgitTest-->
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+    </ContentPage.Padding>
+    
+    <StackLayout>
+        <DatePicker x:Name="dtpicker"
+                    Date="{x:Static sys:DateTime.Now}"
+                    Format="yyyy/MM/dd"                    
+                    DateSelected="DateSelected"/>
+
+        <ListView x:Name="lstenji"
+
+            HasUnevenRows="true"
+                          
+            ItemSelected="OnListViewItemSelected"
+            ItemTapped="OnListViewItemTapped">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="2"
+                               Source="{Binding ImageUrl}"
+                               Aspect="AspectFill"
+                               HeightRequest="40"
+                               WidthRequest="60" />
+                            <Label Grid.Column="1"
+                               Text="{Binding Name}"
+                               FontAttributes="Bold" />
+                            <Label Grid.Row="1"
+                               Grid.Column="1"
+                               Text="{Binding Stat}"
+                               VerticalOptions="End" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

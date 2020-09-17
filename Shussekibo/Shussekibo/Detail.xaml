@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Shussekibo.Detail">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name ="Enjiname" 
+                   Text="Enjiname"
+                   FontSize="Large"
+                   TextColor="BlueViolet"
+                   FontAttributes="Bold, Italic"/>
+            <Label Text=""/>
+            <Label x:Name ="Stat01"
+                   Text="ステータス１"/>
+            <Label Text=""/>
+            <Label x:Name ="Stat02"
+                   Text="ステータス２"/>
+            <Label Text=""/>
+            <Label x:Name ="Stat03"
+                   Text="ステータス３"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
