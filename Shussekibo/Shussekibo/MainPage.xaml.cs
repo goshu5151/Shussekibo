@@ -9,7 +9,6 @@ using MySqlConnector;
 
 namespace Shussekibo
 {
-    // GitHub test!!!
     public partial class MainPage : ContentPage
     {
         /// <summary>
